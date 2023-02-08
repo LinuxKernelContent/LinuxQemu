@@ -2,7 +2,6 @@ Here are the steps to create a ramfs.img file in WSL (Windows Subsystem for Linu
 
 Install QEMU in WSL:
 ```
-Copy code
 sudo apt-get update
 sudo apt-get install qemu-system-x86 qemu-utils
 ```
