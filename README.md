@@ -11,7 +11,6 @@ mkdir ~/ramfs
 ```
 Populate the directory with the files you want to include in the ramfs image:
 ```
-Copy code
 cd ~/ramfs
 ```
 # Create any necessary directories
