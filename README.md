@@ -40,3 +40,20 @@ Run the Linux kernel in QEMU with the ramfs.img file as the root file system:
 ```
 qemu-system-x86_64 -kernel /path/to/linux-kernel -initrd ramfs.img -append "root=/dev/ram rw"
 ```
+Create a virtual disk image: You can create a virtual disk image using the qemu-img command, for example:
+```
+qemu-img create -f qcow2 rootfs.img 2G
+```
+Boot the virtual machine with the virtual disk image: You can use the -hda option of the QEMU command to specify the virtual disk image created in step 1 as the virtual hard disk of the virtual machine, for example:
+```
+qemu-system-x86_64 -hda rootfs.img -cdrom /path/to/os-installation-image.iso
+```
+In this command, the -cdrom option is used to specify the ISO image of the operating system installation image.
+
+Perform the operating system installation: Once the virtual machine is running, you can perform the operating system installation in the usual way, using the ISO image as the installation source.
+
+Boot the virtual machine using the virtual disk image: After the installation is complete, you can shut down the virtual machine and then boot it again using the virtual disk image as the root file system, for example:
+```
+qemu-system-x86_64 -hda rootfs.img
+```
+
