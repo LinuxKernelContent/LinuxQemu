@@ -1,3 +1,12 @@
+# Create fs.img <uname -r> == linux-6.1.11
+```
+mkinitramfs -k linux-6.1.11 -o fs.img
+
+```
+ # Run qemu with the compiled linux kernel
+```
+qemu-system-x86_64 -kernel ~/linux-6.1.11/arch/x86_64/boot/bzImage -initrd initrd.img
+```
 Here are the steps to create a ramfs.img file in WSL (Windows Subsystem for Linux) to run the Linux kernel in QEMU (Quick EMUlator):
 
 Install QEMU in WSL:
