@@ -32,7 +32,7 @@ Create the ramfs.img file:
 cd ~
 dd if=/dev/zero of=ramfs.img bs=1M count=64
 mkfs.ext2 ramfs.img
-```
+``` 
 Mount the ramfs.img file to the ramfs directory:
 ```
 sudo mount -o loop ramfs.img ~/ramfs
