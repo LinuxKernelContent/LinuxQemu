@@ -52,7 +52,9 @@ qemu-system-x86_64 -kernel /path/to/linux-kernel -initrd ramfs.img -append "root
 ```
 qemu-img create -f qcow2 rootfs.img 2G
 ```
-## Boot the virtual machine with the virtual disk image: You can use the -hda option of the QEMU command to specify the virtual disk image created in step 1 as the virtual hard disk of the virtual machine, for example:
+``` Boot the virtual machine with the virtual disk image: You can use the -hda option of the 
+ QEMU command to specify the virtual disk image created in step 1 as the virtual hard disk of the virtual machine, for example:
+```
 ```
 qemu-system-x86_64 -hda rootfs.img -cdrom /path/to/os-installation-image.iso
 ```
