@@ -1,3 +1,40 @@
+
+## Tracing the Linux kernel functions
+Tracing the Linux kernel functions can be useful for debugging and performance analysis. There are various tools available in Linux for tracing kernel functions. Here are some popular methods:
+
+ftrace: ftrace is a built-in Linux kernel tracing framework that allows tracing function calls and other events. It can be used to trace function calls, context switches, system calls, and many other events. To use ftrace, you need to enable it in the kernel configuration and use the provided command-line tools, such as trace-cmd, to configure and view the trace data.
+
+SystemTap: SystemTap is a dynamic tracing tool that allows tracing and analyzing various system events, including kernel function calls. It uses a high-level scripting language to define tracing probes and actions, which can then be compiled and loaded into the kernel to trace specific events.
+
+Perf: Perf is a performance analysis tool that provides a variety of profiling and tracing features, including kernel function tracing. It uses hardware performance counters and kernel tracepoints to collect profiling data and can be used to analyze CPU utilization, memory usage, and other performance metrics.
+
+LTTng: LTTng (Linux Trace Toolkit Next Generation) is a tracing framework that provides high-performance kernel and application tracing. It supports various tracing events, including function calls, system calls, and interrupt handlers. It provides both command-line and graphical tools for configuring and visualizing trace data.
+
+These are just a few of the many tracing tools available in Linux. The choice of tool depends on the specific use case and requirements.
+Perf is a powerful performance analysis tool that can be used to profile and trace various system events, including kernel function calls, hardware performance counters, and system calls. Here are the basic steps to use perf:
+
+Check whether perf is installed: Run the command perf --version in a terminal to check whether perf is installed on your system. If it is not installed, install it using your system's package manager.
+
+Choose an event to trace: Use the perf list command to view the available events that perf can trace. You can choose a specific event or a combination of events to trace.
+
+Choose a command to profile: Choose the command or program you want to profile using perf. For example, you can profile the ls command by running perf record ls.
+
+Analyze the trace data: After running the profiling command, perf generates a binary trace file. You can analyze the trace data using various commands, such as perf report, perf annotate, and perf stat.
+
+Interpret the results: The perf output provides various metrics and statistics that can be used to interpret the performance of the profiled command. For example, you can analyze the CPU utilization, cache misses, and instruction counts.
+
+Here are some examples of using perf:
+
+- To trace the number of CPU cycles for the ls command: perf stat ls
+- To trace the number of CPU cycles and cache misses for the ls command: perf stat -e cycles,cache-misses ls
+- To trace the kernel function calls for the ls command: perf record -e syscalls ls
+- To analyze the trace data for the ls command: perf report or perf annotate
+
+## Tracing while traffic is received
+- sudo perf record --call-graph fp -g -- sleep 5
+- sudo perf record -ag sleep 10
+- sudo perf report --sort=cpu > guy_perf.txt
+
 ## Create fs.img <uname -r> == linux-6.1.11
 ```
 mkinitramfs -k linux-6.1.11 -o fs.img
