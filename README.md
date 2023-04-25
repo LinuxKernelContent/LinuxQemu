@@ -135,10 +135,4 @@ qemu-system-x86_64 -hda rootfs.img
  
  
  
- 
- 
- 
- 
- 
- 
 
