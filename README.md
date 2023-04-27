@@ -106,3 +106,21 @@ Boot the virtual machine using the virtual disk image: After the installation is
 ```
 qemu-system-x86_64 -hda rootfs.img
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
