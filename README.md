@@ -97,6 +97,7 @@ qemu-system-x86_64 -hda rootfs.img -cdrom /path/to/os-installation-image.iso
 ```
 ```
 In this command, the -cdrom option is used to specify the ISO image of the operating system installation image.
+ 
 
 Perform the operating system installation: Once the virtual machine is running, you can perform the operating system installation in the usual way, using the ISO image as the installation source.
 
